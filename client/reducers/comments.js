@@ -1,6 +1,8 @@
 function postComments(state = [] , action){
   switch(action.type){
     case 'ADD_COMMENT':
+    // this will return the concat comment with the current state in array  form.
+      console.log([...state, {user: action.author, text: action.comment}])
     //return the new state with the new comments
       return [...state, {
         user: action.author,
@@ -8,7 +10,9 @@ function postComments(state = [] , action){
       }];
 
     case 'REMOVE_COMMENT':
-      return state;
+      console.log("removing a comment");
+      return [...state.slice(0,action.i), ...state.slice(action.i + 1)]
+      
     default:
       return state;
   }
