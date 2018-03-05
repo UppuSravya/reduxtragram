@@ -22,12 +22,12 @@ class Comments extends Component {
 
   handleSubmit(e){
     e.preventDefault();
-    console.log("submitting the form.");
+    // console.log("submitting the form.");
     const { postId } = this.props.params;
     const author = this.refs.author.value;
     const comment = this.refs.comment.value;
     this.props.addComment(postId, author, comment);
-    this.refs.commentForm.reset();
+    // this.refs.commentForm.reset();
   }
 
   render(){
